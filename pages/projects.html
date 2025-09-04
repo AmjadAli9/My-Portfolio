@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects | Mohd Amjad Ali</title>
+  <link rel="stylesheet" href="/css/projects.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+<style>
+  body{
+  background-color:  #0f0f0f ;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-right: 2px solid #222;
+  z-index: 1000;
+}
+
+.sidebar .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar .nav-links li {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar .nav-links li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.sidebar .nav-links li a:hover {
+  color: #00ffff;
+}
+
+.sidebar .nav-links li a i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.sidebar .nav-links li a span {
+  font-size: 12px;
+  display: block;
+}
+  
+  /* Shift main content to the right */
+  .main-content {
+    margin-left: 100px;
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .main-content {
+    margin-left: 200px;
+    padding: 30px;
+  }
+    
+  .main-content {
+    margin-left: 220px;
+    padding: 40px 60px;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00f6ff;
+  }
+  
+  .filter-buttons {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-btn {
+    padding: 8px 20px;
+    border: none;
+    background: #00f6ff22;
+    color: #00f6ff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #00f6ff;
+    color: #000;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .project-card {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 0 15px #00f6ff22;
+    transform-style: preserve-3d;
+    transition: transform 0.2s ease, box-shadow 0.2s;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .project-card.reveal {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.6s ease-in-out;
+  }
+  
+  .project-card h2 {
+    color: #00f6ff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+  
+  .project-card p {
+    font-size: 0.95rem;
+    color: #b0faff;
+    margin-bottom: 15px;
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  .bar-graph {
+    display: flex;
+    gap: 8px;
+    height: 50px;
+    align-items: end;
+    margin-bottom: 15px;
+  }
+  
+  .bar {
+    flex: 1;
+    background: #00f6ff;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 8px 18px;
+    background: #00f6ff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 15px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .btn:hover {
+    background: #00c2cc;
+  }
+  
+  /* Carousel Cube (Optional Design) */
+  .carousel-section {
+    margin-top: 60px;
+    text-align: center;
+  }
+  
+  .carousel-cube {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateX(-20deg) rotateY(20deg);
+    animation: spin 20s infinite linear;
+  }
+  
+  .face {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: #00f6ff22;
+    border: 1px solid #00f6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: black;
+    font-size: 1.1rem;
+  }
+  
+  .face.front { transform: translateZ(100px); }
+  .face.back { transform: rotateY(180deg) translateZ(100px); }
+  .face.left { transform: rotateY(-90deg) translateZ(100px); }
+  .face.right { transform: rotateY(90deg) translateZ(100px); }
+  .face.top { transform: rotateX(90deg) translateZ(100px); }
+  .face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+  
+  @keyframes spin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+  }
+  
+</style>
+<div class="sidebar">
+  <ul class="nav-links">
+    <li><a href="/pages/index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+    <li><a href="/pages/about.html"><i class="fas fa-user"></i><span>About</span></a></li>
+    <li><a href="/pages/skills.html"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+    <li><a href="/pages/projects.html"><i class="fas fa-laptop-code"></i><span>Projects</span></a></li>
+    <li><a href="/pages/events.html"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+    <li><a href="/pages/achievements.html"><i class="fas fa-trophy"></i><span>Achievements</span></a></li>
+    <li><a href="/pages/certifications.html"><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+    <li><a href="/pages/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+    <li><a href="/pages/blog.html" ><i class="fas fa-blog"></i><span>Blog</span></a></li>
+  </ul>
+</div>
+
+<!-- Main Content -->
+<main class="main-content">
+  <h1 class="page-title">🚀 My Futuristic Projects</h1>
+
+  <div class="filter-buttons">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="ai">AI</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+    <button class="filter-btn" data-filter="games">Games</button>
+    <button class="filter-btn" data-filter="college">College Projects</button>
+  </div>
+
+  <div class="projects-grid">
+    <!-- 1. AI App -->
+    <div class="project-card ai" data-category="ai">
+      <h2>All-in-One AI Application</h2>
+      <p>An advanced AI suite with chatbot, TTS, STT, code gen, quizzes, and more — your daily smart assistant.</p>
+      <div class="stats">
+        <span>⭐ 1.2k</span>
+        <span>👁️ 4.3k</span>
+        <span>⬇️ 980</span>
+      </div>
+      <div class="bar-graph">
+        <div class="bar" style="height: 70%;"></div>
+        <div class="bar" style="height: 90%;"></div>
+        <div class="bar" style="height: 60%;"></div>
+      </div>
+      <a href="https://ai-onestop.netlify.app/home.html" target="_blank" class="btn">View Project</a>
+    </div>
+  
+    <!-- 2. Zeroclass Gaming -->
+    <div class="project-card games" data-category="games">
+      <h2>Zeroclass Gaming</h2>
+      <p>A browser-based gaming platform with Sudoku, Chess, Wordsearch, and more using HTML, CSS & JS.</p>
+      <div class="stats">
+        <span>⭐ 940</span>
+        <span>👁️ 3.1k</span>
+        <span>⬇️ 820</span>
+      </div>
+      <div class="bar-graph">
+        <div class="bar" style="height: 65%;"></div>
+        <div class="bar" style="height: 80%;"></div>
+        <div class="bar" style="height: 50%;"></div>
+      </div>
+      <a href="https://zeroclass-gaming.netlify.app/" target="_blank" class="btn">View Project</a>
+    </div>
+  
+    <!-- 3. Wheat Disease Detection -->
+    <div class="project-card college ai" data-category="college">
+      <h2>Leaf & Spike Wheat Disease Detection</h2>
+      <p>Deep CNN model detecting wheat diseases with 97.88% accuracy and real-time analysis UI.</p>
+      <div class="stats">
+        <span>⭐ 1.5k</span>
+        <span>👁️ 5.6k</span>
+        <span>⬇️ 1.1k</span>
+      </div>
+      <div class="bar-graph">
+        <div class="bar" style="height: 75%;"></div>
+        <div class="bar" style="height: 95%;"></div>
+        <div class="bar" style="height: 85%;"></div>
+      </div>
+      <a href="https://github.com/your-wheat-detection-link" target="_blank" class="btn">View Project</a>
+    </div>
+  
+    <!-- 4. BillyBox Billing App -->
+    <div class="project-card web" data-category="web">
+      <h2>BillyBox - Billing Application</h2>
+      <p>Complete billing platform with inventory, invoices, expenses, employee tracking and analytics.</p>
+      <div class="stats">
+        <span>⭐ 1.8k</span>
+        <span>👁️ 6.2k</span>
+        <span>⬇️ 1.3k</span>
+      </div>
+      <div class="bar-graph">
+        <div class="bar" style="height: 88%;"></div>
+        <div class="bar" style="height: 92%;"></div>
+        <div class="bar" style="height: 70%;"></div>
+      </div>
+      <a href="https://github.com/your-billybox-link" target="_blank" class="btn">View Project</a>
+    </div>
+  
+    <!-- 5. Portfolio Website -->
+    <div class="project-card web" data-category="web">
+      <h2>My Portfolio</h2>
+      <p>A futuristic, animated portfolio showcasing projects, skills, achievements and interactive UI.</p>
+      <div class="stats">
+        <span>⭐ 1.1k</span>
+        <span>👁️ 3.4k</span>
+        <span>⬇️ 790</span>
+      </div>
+      <div class="bar-graph">
+        <div class="bar" style="height: 65%;"></div>
+        <div class="bar" style="height: 85%;"></div>
+        <div class="bar" style="height: 60%;"></div>
+      </div>
+      <a href="https://github.com/your-portfolio-link" target="_blank" class="btn">View Project</a>
+    </div>
+  
+    <!-- 6. WebDev-Hub -->
+    <div class="project-card web" data-category="web">
+      <h2>WebDev-Hub</h2>
+      <p>A complete resource hub for web developers featuring templates, starter kits, guides, and snippets.</p>
+      <div class="stats">
+        <span>⭐ 2.0k</span>
+        <span>👁️ 7.5k</span>
+        <span>⬇️ 1.9k</span>
+      </div>
+      <div class="bar-graph">
+        <div class="bar" style="height: 90%;"></div>
+        <div class="bar" style="height: 95%;"></div>
+        <div class="bar" style="height: 80%;"></div>
+      </div>
+      <a href="https://amjadali9.github.io/WebDev-Hub/" target="_blank" class="btn">View Project</a>
+    </div>
+  <!-- New Major Project Section -->
+<section class="featured-live-project">
+  <div class="project-card ai college" data-category="college">
+    <h2>Road Accident Severity & Hospital Recommendation</h2>
+    <p>A full-stack AI system using CNN+LSTM with Dijkstra’s path-finding, hosted live for real-time use.</p>
+    <div class="stats">
+      <span>⭐ 2.1k</span>
+      <span>👁️ 7.8k</span>
+      <span>⬇️ 1.6k</span>
+    </div>
+    <div class="bar-graph">
+      <div class="bar" style="height: 90%;"></div>
+      <div class="bar" style="height: 95%;"></div>
+      <div class="bar" style="height: 85%;"></div>
+    </div>
+    <a href="https://accidentcare.netlify.app/index.html" target="_blank" class="btn">View Project</a>
+  </div>
+</section>
+
+    <!-- 7. Placeholder / Future Project -->
+    <div class="project-card ai" data-category="ai">
+      <h2>AI Voice Assistant (Coming Soon)</h2>
+      <p>A smart assistant powered by voice recognition and GPT API — in progress!</p>
+      <div class="stats">
+        <span>⭐ 0</span>
+        <span>👁️ 0</span>
+        <span>⬇️ 0</span>
+      </div>
+      <div class="bar-graph">
+        <div class="bar" style="height: 20%;"></div>
+        <div class="bar" style="height: 30%;"></div>
+        <div class="bar" style="height: 10%;"></div>
+      </div>
+      <a href="#" target="_blank" class="btn">Coming Soon</a>
+    </div>
+  </div>
+  
+
+  <!-- Optional 3D Carousel Section -->
+  <section class="carousel-section">
+    <h2>Featured Projects Cube</h2>
+    <div class="carousel-cube">
+      <div class="face front">AI Project</div>
+      <div class="face back">Web App</div>
+      <div class="face left">Game</div>
+      <div class="face right">College</div>
+      <div class="face top">Portfolio</div>
+      <div class="face bottom">Billing</div>
+    </div>
+  </section>
+</main>
+
+
+<!-- JavaScript -->
+<script>
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.project-card');
+const hoverSound = document.getElementById("hover-sound");
+const clickSound = document.getElementById("click-sound");
+
+// Filtering
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    clickSound.play();
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    cards.forEach(card => {
+      card.style.display = (filter === "all" || card.classList.contains(filter)) ? "block" : "none";
+    });
+  });
+});
+
+// Hover sound
+cards.forEach(card => {
+  card.addEventListener("mouseenter", () => hoverSound.play());
+});
+
+// Scroll animation
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("reveal");
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(card => observer.observe(card));
+
+// Tilt 3D effect
+cards.forEach(card => {
+  card.addEventListener("mousemove", e => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    card.style.transform = `rotateY(${x / 25}deg) rotateX(${-y / 25}deg)`;
+  });
+  card.addEventListener("mouseleave", () => {
+    card.style.transform = "rotateY(0deg) rotateX(0deg)";
+  });
+});
+</script>
+
+</body>
+</html>

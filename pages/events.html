@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Events - Mohd Amjad Ali</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+
+ <style>
+  body {
+  display: flex;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-right: 2px solid #222;
+}
+
+.sidebar .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar .nav-links li {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar .nav-links li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.sidebar .nav-links li a:hover {
+  color: #00ffff;
+}
+
+.sidebar .nav-links li a i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.sidebar .nav-links li a span {
+  font-size: 12px;
+  display: block;
+}
+
+/* Shift main content to the right */
+.main-content {
+  margin-left: 100px;
+  padding: 20px;
+  flex: 1;
+}
+
+  .main-content {
+    margin-left: 220px;
+    padding: 40px;
+  }
+
+  .main-content h1 {
+    font-size: 40px;
+    text-align: center;
+    text-shadow: 0 0 15px #00fff2;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-top: 80px;
+    text-align: center;
+    color: #00fff2;
+    text-shadow: 0 0 10px #00fff2;
+  }
+
+  .skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .skill-card {
+    width: 160px;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #00fff2;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #00fff2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+  }
+
+  .skill-card:hover {
+    transform: scale(1.08) rotateY(10deg);
+    box-shadow: 0 0 30px #00fff2, 0 0 60px #00fff2;
+  }
+
+  .skill-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 8px #00fff2);
+  }
+
+  .skill-card span {
+    font-size: 16px;
+    text-align: center;
+    color: #00fff2;
+  }
+
+  .divider {
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(to right, transparent, #00fff2, transparent);
+    margin: 60px 0;
+  }
+
+  @media (max-width: 768px) {
+    .main-content {
+      margin-left: 0;
+      padding: 20px;
+    }
+
+    .sidebar {
+      display: none;
+    }
+
+    .skill-card {
+      width: 120px;
+      height: 150px;
+    }
+
+    .skill-card img {
+      width: 50px;
+      height: 50px;
+    }
+
+    .skill-card span {
+      font-size: 14px;
+    }
+  }
+  
+.main-content {
+  margin-left: 110px;
+  padding: 40px 30px;
+  width: calc(100% - 110px);
+}
+
+.intro h1 {
+  font-size: 2.8rem;
+  color: #00ffff;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.intro p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.event-details .event {
+  background: #1a1a1a;
+  margin-bottom: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffff44;
+  transition: transform 0.3s ease;
+}
+
+.event:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px #00ffff88;
+}
+
+.event h2 {
+  color: #00ffff;
+  margin-bottom: 10px;
+}
+
+.event p {
+  color: #ccc;
+  font-size: 1rem;
+}
+
+.gallery h2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff99;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .main-content {
+    margin-left: 80px;
+    padding: 20px;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+  }
+
+  .intro p, .event p {
+    font-size: 0.95rem;
+  }
+}
+ </style>
+  <div class="sidebar">
+    <ul class="nav-links">
+      <li><a href="/pages/index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="/pages/about.html"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="/pages/skills.html" class="active"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+      <li><a href="/pages/projects.html"><i class="fas fa-laptop-code"></i><span>Projects</span></a></li>
+      <li><a href="/pages/events.html" ><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+      <li><a href="/pages/achievements.html"><i class="fas fa-trophy"></i><span>Achievements</span></a></li>
+      <li><a href="/pages/certifications.html"><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+      <li><a href="/pages/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+       <li><a href="/pages/blog.html" ><i class="fas fa-blog"></i><span>Blog</span></a></li>
+    </ul>
+  </div>
+
+<!-- Main Content -->
+<!-- Main Content -->
+<main class="main-content">
+  <section class="intro">
+    <h1>🚀 My Event Journey</h1>
+    <p>From ideation to execution, I’ve actively participated in and led numerous events throughout my college journey, sharpening both my technical skills and leadership abilities in real-world scenarios.</p>
+  </section>
+
+  <section class="event-details">
+    <div class="event">
+      <h2>⚡ DSA-thon</h2>
+      <p>Organized alongside Habeeb Ahmed & Mohd Baktiyar Ahmed, this high-energy coding marathon challenged participants to solve real-world Data Structures & Algorithms problems under pressure.</p>
+    </div>
+
+    <div class="event">
+      <h2>💡 Techfiesta</h2>
+      <p>An exciting blend of technical and non-technical events — including blind coding, debugging face-offs, and football tournaments — where I proudly represented my batch across the college.</p>
+    </div>
+
+    <div class="event">
+      <h2>📋 Event Management Team</h2>
+      <p>As a core member of the organizing team, I played a key role in planning and executing multiple college events, ensuring smooth operations with a strong focus on teamwork and precision.</p>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <h2>📸 Event Gallery</h2>
+    <div class="gallery-grid">
+      <img src="/images/dsathon.jpg" alt="DSA-thon">
+      <img src="/images/dsathon1.jpg" alt="DSA-thon">
+      <img src="/images/techfiesta1.jpg" alt="Techfiesta">
+      <img src="/images/techfiesta2.jpg" alt="Techfiesta">
+      <img src="/images/techfiesta3.jpg" alt="Techfiesta">
+      <img src="/images/eventmanage.jpg" alt="Event Management">
+      <img src="/images/eventmanage1.jpg" alt="Event Management">
+    </div>
+  </section>
+</main>
+
+</body>
+</html>

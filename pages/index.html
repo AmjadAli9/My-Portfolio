@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohd Amjad Ali - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Do+Hyeon&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        
+
+        
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: #000;
+    color: black;
+    overflow: hidden;
+}
+
+/* 🚀 Hero Section */
+.hero {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 🚀 Three.js Canvas */
+#three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 🚀 Floating 3D Text */
+.hero-content {
+    position: relative;
+    text-align: center;
+    z-index: 10;
+}
+
+.floating-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: black;
+    text-shadow: 0px 0px 20px cyan;
+    animation: float 3s infinite ease-in-out;
+}
+
+.sub-text {
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 15px cyan;
+}
+
+/* 📬 Holographic Contact Form */
+.holo-contact-form {
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid cyan;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.holo-contact-form input, 
+.holo-contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: none;
+    border: 1px solid cyan;
+    color: white;
+}
+
+.holo-contact-form button {
+    width: 100%;
+    padding: 10px;
+    background: cyan;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 🔥 Animations */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+/* Sidebar Styling */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    width: 250px;
+    height: 100%;
+    background-color: #111; /* Dark background */
+    color: #fff;
+    overflow-y: auto;
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+    z-index: 1000;
+    padding-top: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #00ffff; /* Neon blue text */
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.3s ease;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #333; /* Highlight active or hovered links */
+    color: #fff;
+}
+
+/* Show sidebar on hover near the left edge */
+body:hover .sidebar {
+    left: 0;
+}
+
+/* Responsive Sidebar for Smaller Screens */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Adjust width for smaller screens */
+    }
+
+    .sidebar ul li a {
+        font-size: 14px; /* Smaller font size */
+    }
+}
+/* 🔥 Floating Contact Button */
+#contact-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background: cyan;
+    color: black;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px cyan;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+}
+
+#contact-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* 🚀 Show Contact Button Only When Scrolled */
+#contact-btn.visible {
+    display: block;
+}
+/* 🔥 Sidebar */
+.sidebar {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    transition: left 0.4s ease-in-out;
+    padding-top: 50px;
+    z-index: 1000;
+}
+
+.sidebar:hover,
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.sidebar-links li {
+    padding: 15px;
+}
+
+.sidebar-links li a {
+    text-decoration: none;
+    color: cyan;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar-links li a:hover {
+    color: white;
+    text-shadow: 0px 0px 10px cyan;
+}
+
+/* 🔥 Enable Scrolling */
+body {
+    height: 200vh;
+    overflow-y: auto;
+}
+
+
+/* 🔥 Floating Contact Button */
+#contact-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background: cyan;
+    color: black;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px cyan;
+    cursor: pointer;
+    transition: 0.3s;
+    display: none;
+}
+
+#contact-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* 🚀 Show Contact Button Only When Scrolled */
+#contact-btn.visible {
+    display: block;
+}
+
+/* 🔥 Enable Scrolling */
+body {
+    height: 200vh; /* Makes sure scrolling is possible */
+    overflow-y: auto;
+}
+/* 🤖 AI Bot */
+.ai-bot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#botIcon {
+    background: #00ffcc;
+    color:  #0f0f0f;
+    font-size: 18px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#botIcon:hover {
+    background: #ff0077;
+    color: white;
+}
+
+.bot-menu {
+    display: none;
+    position: absolute;
+    bottom: 50px;
+    right: 0;
+    background: white;
+    padding: 10px;
+    border: 2px solid #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
+}
+
+.bot-menu button {
+    display: block;
+    background: none;
+    border: none;
+    color: #00ffcc;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.bot-menu button:hover {
+    color: #ff0077;
+}
+#matrixCanvas, #three-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  #matrixCanvas {
+    z-index: -2;
+    background-color: black;
+  }
+  
+  #three-canvas {
+    z-index: -1;
+    pointer-events: none;
+  }
+  </style>
+</head>
+<body>
+    <button id="toggle-mode" class="fixed-btn">🌞 Toggle</button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+        <ul>
+            <li><a href="/pages/about.html" class="active">About Me</a></li>
+            <li><a href="/pages/skills.html">Skills</a></li>
+            <li><a href="/pages/projects.html">Projects</a></li>
+            <li><a href="/pages/events.html">Events</a></li>
+            <li><a href="/pages/achievements.html">Achievements</a></li>
+            <li><a href="/pages/certifications.html">Certificates</a></li>
+            <li><a href="/pages/contact.html">Contact</a></li>
+            <li><a href="/pages/blog.html">Blogs</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <canvas id="three-canvas"></canvas>
+        <div class="hero-content">
+            <h1 class="floating-text">MOHD AMJAD ALI</h1>
+            <h2 class="sub-text">Developer | Designer | Researcher</h2>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section">
+        <form class="holo-contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- AI Assistant -->
+    <div class="ai-bot">
+        <button id="botIcon">🤖 AI Bot</button>
+        <div id="botMenu" class="bot-menu">
+            <h3>How can I assist you?</h3>
+            <button onclick="showInfo()">📌 About Amjad</button>
+            <button onclick="contactInfo()">📞 Contact</button>
+            <button onclick="praise()">🔥 Why Amjad?</button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>// 🌍 Three.js Scene
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById("three-canvas"), alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+  document.addEventListener("DOMContentLoaded", () => {
+    // ===== TYPED.JS FOR NAME =====
+    new Typed("#typed-name", {
+      strings: ["MOHD AMJAD ALI"],
+      typeSpeed: 100,
+      backSpeed: 50,
+      showCursor: false,
+      loop: false,
+      onComplete: () => {
+        // Fade-in tagline after name finishes
+        gsap.to("#rotating-tagline", { opacity: 1, duration: 1 });
+      }
+    });
+
+    // ===== ROTATING TAGLINES =====
+    const taglines = ["Developer 🚀", "Designer 🎨", "Researcher 🔬"];
+    let taglineIndex = 0;
+    const taglineEl = document.getElementById("rotating-tagline");
+    function rotateTaglines() {
+      gsap.to(taglineEl, { opacity: 0, duration: 0.5, onComplete: () => {
+          taglineEl.textContent = taglines[taglineIndex];
+          taglineIndex = (taglineIndex + 1) % taglines.length;
+          gsap.to(taglineEl, { opacity: 1, duration: 0.5 });
+      }});
+    }
+    rotateTaglines();
+    setInterval(rotateTaglines, 2500);
+
+    // ===== FLOATING PARTICLES =====
+    for (let i = 0; i < 30; i++) {
+      let particle = document.createElement("div");
+      particle.classList.add("floating-particle");
+      particle.style.left = Math.random() * 100 + "vw";
+      particle.style.top = Math.random() * 100 + "vh";
+      document.body.appendChild(particle);
+      gsap.to(particle, {
+        y: "-=20",
+        duration: Math.random() * 3 + 2,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+        delay: Math.random() * 2
+      });
+    }
+
+    // ===== FADE-IN HERO CONTENT =====
+    gsap.from(".hero-content", { opacity: 0, y: 30, duration: 1.5, ease: "power2.out" });
+  });
+
+
+// 🌌 Background and Light (Day/Night)
+let isDay = true;
+const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+scene.add(ambientLight);
+scene.background = new THREE.Color(0x87ceeb); // Initial day color
+
+document.getElementById("toggle-mode").addEventListener("click", () => {
+    isDay = !isDay;
+    scene.background = new THREE.Color(isDay ? 0x87ceeb : 0x000011);
+    ambientLight.color.set(isDay ? 0xffffff : 0x222244);
+    ambientLight.intensity = isDay ? 1 : 0.3;
+});
+
+// 🌐 Sphere
+const geometry = new THREE.SphereGeometry(5, 32, 32);
+const material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true });
+const sphere = new THREE.Mesh(geometry, material);
+scene.add(sphere);
+camera.position.z = 20;
+
+// ✨ Particles
+const particlesGeometry = new THREE.BufferGeometry();
+const particlesCount = 500;
+const posArray = new Float32Array(particlesCount * 3);
+for (let i = 0; i < particlesCount * 3; i++) {
+    posArray[i] = (Math.random() - 0.5) * 30;
+}
+particlesGeometry.setAttribute("position", new THREE.BufferAttribute(posArray, 3));
+const particlesMaterial = new THREE.PointsMaterial({ color: 0x00ffff, size: 0.05 });
+const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+scene.add(particlesMesh);
+
+// 🔳 Grid
+const gridHelper = new THREE.GridHelper(80, 80, 0x00ffff, 0x00ffff);
+gridHelper.position.y = -5;
+scene.add(gridHelper);
+
+// 🏙️ Holographic Buildings
+const buildingGroup = new THREE.Group();
+const buildingMaterial = new THREE.MeshBasicMaterial({
+    color: 0x00ffff,
+    transparent: true,
+    opacity: 0.2,
+    wireframe: true
+});
+for (let i = 0; i < 50; i++) {
+    const width = Math.random() * 1 + 0.5;
+    const height = Math.random() * 8 + 2;
+    const depth = Math.random() * 1 + 0.5;
+    const geometry = new THREE.BoxGeometry(width, height, depth);
+    const building = new THREE.Mesh(geometry, buildingMaterial.clone());
+    building.position.x = (Math.random() - 0.5) * 80;
+    building.position.z = (Math.random() - 0.5) * 80;
+    building.position.y = height / 2 - 5;
+    buildingGroup.add(building);
+}
+scene.add(buildingGroup);
+
+// 🎇 Neon Billboards on Buildings
+for (let i = 0; i < 10; i++) {
+    const billboardGeo = new THREE.PlaneGeometry(1.2, 0.5);
+    const billboardMat = new THREE.MeshBasicMaterial({ color: 0xff00ff, side: THREE.DoubleSide });
+    const billboard = new THREE.Mesh(billboardGeo, billboardMat);
+    const b = buildingGroup.children[Math.floor(Math.random() * buildingGroup.children.length)];
+    billboard.position.set(b.position.x, b.position.y + b.geometry.parameters.height / 2 - 0.5, b.position.z + 0.6);
+    billboard.rotation.y = Math.PI;
+    scene.add(billboard);
+}
+
+// 🛸 Flying Animated Drones
+const drones = [];
+for (let i = 0; i < 5; i++) {
+    const droneGeo = new THREE.SphereGeometry(0.2, 16, 16);
+    const droneMat = new THREE.MeshBasicMaterial({ color: 0xff00ff });
+    const drone = new THREE.Mesh(droneGeo, droneMat);
+    drone.userData = {
+        angle: Math.random() * Math.PI * 2,
+        radius: 10 + Math.random() * 10,
+        speed: 0.01 + Math.random() * 0.02
+    };
+    scene.add(drone);
+    drones.push(drone);
+}
+
+// 🔁 Animate
+function animate() {
+    requestAnimationFrame(animate);
+    sphere.rotation.y += 0.01;
+    sphere.rotation.x += 0.005;
+    particlesMesh.rotation.y += 0.002;
+
+    drones.forEach(drone => {
+        drone.userData.angle += drone.userData.speed;
+        drone.position.x = Math.cos(drone.userData.angle) * drone.userData.radius;
+        drone.position.z = Math.sin(drone.userData.angle) * drone.userData.radius;
+        drone.position.y = 5 + Math.sin(drone.userData.angle * 2);
+    });
+
+    renderer.render(scene, camera);
+}
+animate();
+
+// 📐 Resize
+window.addEventListener("resize", () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+});
+
+// 🧠 Floating Text Effect
+document.addEventListener("mousemove", (e) => {
+    const text = document.querySelector(".floating-text");
+    if (!text) return;
+    let x = (window.innerWidth / 2 - e.clientX) / 30;
+    let y = (window.innerHeight / 2 - e.clientY) / 30;
+    text.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+// 🔘 Show Contact Button on Scroll
+window.addEventListener("scroll", function () {
+    const contactBtn = document.getElementById("contact-btn");
+    if (contactBtn) {
+        contactBtn.classList.toggle("visible", window.scrollY > 300);
+    }
+});
+
+// 📂 Sidebar Hover
+document.addEventListener("mousemove", function (event) {
+    const sidebar = document.querySelector(".sidebar");
+    if (sidebar) {
+        sidebar.style.left = event.clientX < 50 ? "0" : "-250px";
+    }
+});
+
+// 🤖 Bot Menu Toggle
+document.getElementById("botIcon")?.addEventListener("click", function () {
+    const botMenu = document.getElementById("botMenu");
+    if (botMenu) {
+        botMenu.style.display = botMenu.style.display === "block" ? "none" : "block";
+    }
+});
+
+// ℹ️ Bot Menu Functions
+function showInfo() {
+    alert("👨‍💻 Mohd Amjad Ali is a futuristic web developer passionate about AI, UI/UX, and game design.");
+}
+function contactInfo() {
+    alert("📞 Reach him via LinkedIn or email: 2003amjadali@gmail.com");
+}
+function praise() {
+    alert("🔥 Amjad is a tech innovator, always pushing boundaries in AI and game design!");
+}
+</script>
+    
+</body>
+</html>

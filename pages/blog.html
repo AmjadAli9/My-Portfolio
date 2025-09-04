@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog & Research | Mohd Amjad Ali</title>
+  <link rel="stylesheet" href="/css/blog.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+<style>
+  body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f0f0f;
+  color: #fff;
+}
+
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 90px;
+  height: 100vh;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  border-right: 2px solid #222;
+}
+
+.sidebar .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar .nav-links li {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar .nav-links li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.sidebar .nav-links li a:hover {
+  color: #00ffff;
+}
+
+.sidebar .nav-links li a i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.sidebar .nav-links li a span {
+  font-size: 12px;
+  display: block;
+}
+
+
+/* Main Content */
+.main-content {
+  margin-left: 110px;
+  padding: 40px 30px;
+  max-width: 1100px;
+}
+
+.page-title {
+  font-size: 36px;
+  text-align: center;
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+  margin-bottom: 10px;
+}
+
+.page-intro {
+  text-align: center;
+  color: #ccc;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+.blog-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.blog-card {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00fff2;
+  border-radius: 20px;
+  box-shadow: 0 0 20px #00fff2;
+  width: 320px;
+  padding: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #00fff2, 0 0 60px #00fff2;
+}
+
+.blog-card h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #00ffff;
+}
+
+.blog-snippet {
+  font-size: 15px;
+  color: #ccc;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.blog-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #00fff2;
+}
+
+.blog-meta a {
+  text-decoration: none;
+  color: #00fff2;
+}
+
+.blog-meta a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .blog-card {
+    width: 100%;
+    max-width: 380px;
+  }
+}
+
+</style>
+<!-- Sidebar -->
+<div class="sidebar">
+  <ul class="nav-links">
+    <li><a href="/pages/index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+    <li><a href="/pages/about.html"><i class="fas fa-user"></i><span>About</span></a></li>
+    <li><a href="/pages/skills.html"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+    <li><a href="/pages/projects.html"><i class="fas fa-laptop-code"></i><span>Projects</span></a></li>
+    <li><a href="/pages/events.html"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+    <li><a href="/pages/achievements.html"><i class="fas fa-trophy"></i><span>Achievements</span></a></li>
+    <li><a href="/pages/certifications.html"><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+    <li><a href="/pages/blog.html" class="active"><i class="fas fa-blog"></i><span>Blog</span></a></li>
+    <li><a href="/pages/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+     <li><a href="/pages/blog.html" ><i class="fas fa-blog"></i><span>Blog</span></a></li>
+  </ul>
+</div>
+
+<!-- Main Content -->
+<main class="main-content">
+  <h1 class="page-title">🧠 Blog & Research Works</h1>
+  <p class="page-intro">Explore my published technical papers, research, and seminar work below.</p>
+
+  <div class="blog-grid">
+
+    <!-- BLOG CARD 1 -->
+    <div class="blog-card">
+      <h2>🚑 Road Accident Severity & Hospital Recommendation</h2>
+      <p class="blog-snippet short">An advanced deep learning approach combining CNN + LSTM and Dijkstra’s algorithm...</p>
+      <p class="blog-snippet full">An advanced deep learning approach combining CNN + LSTM and Dijkstra’s algorithm to predict accident severity and suggest optimal hospitals in real-time based on live data and geographic routing efficiency.</p>
+      <button class="toggle-abstract">Read More</button>
+      <div class="blog-meta">
+        <span>Major Project Paper – 2024</span>
+        <a href="/major_project_paper_batch-03[1].pdf" download>📥 Download</a>
+        <a class="preview-link" data-doc="/major_project_paper_batch-03[1].pdf">👁️ Preview</a>
+      </div>
+    </div>
+
+    <!-- BLOG CARD 2 -->
+    <div class="blog-card">
+      <h2>🧬 Neuromorphic Computing: Brain-Inspired AI</h2>
+      <p class="blog-snippet short">A technical seminar exploring brain-like architectures using SNNs, memristors...</p>
+      <p class="blog-snippet full">A technical seminar exploring brain-like architectures using SNNs, memristors, spintronics & Intel/IBM neuromorphic chips for real-time adaptive AI systems, with applications in robotics and edge computing.</p>
+      <button class="toggle-abstract">Read More</button>
+      <div class="blog-meta">
+        <span>Seminar Paper – 2023</span>
+        <a href="/amjad ali03 tech sem doc] (5).pdf" download>📥 Download</a>
+        <a class="preview-link" data-doc="/amjad ali03 tech sem doc] (5).pdf">👁️ Preview</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Modal Preview -->
+<div class="modal" id="previewModal">
+  <span class="close">&times;</span>
+  <iframe id="modalFrame" class="modal-frame" src="" frameborder="0"></iframe>
+</div>
+
+<!-- JS for toggle and modal -->
+<script>
+  // Abstract toggling
+  document.querySelectorAll('.toggle-abstract').forEach(button => {
+    button.addEventListener('click', function () {
+      const card = this.closest('.blog-card');
+      const short = card.querySelector('.short');
+      const full = card.querySelector('.full');
+      const expanded = full.style.display === 'block';
+      short.style.display = expanded ? 'block' : 'none';
+      full.style.display = expanded ? 'none' : 'block';
+      this.textContent = expanded ? 'Read More' : 'Show Less';
+    });
+  });
+
+  // Modal preview
+  const modal = document.getElementById('previewModal');
+  const frame = document.getElementById('modalFrame');
+  const closeBtn = document.querySelector('.modal .close');
+
+  document.querySelectorAll('.preview-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const docPath = this.dataset.doc;
+      frame.src = docPath;
+      modal.style.display = 'block';
+    });
+  });
+
+  closeBtn.onclick = () => {
+    modal.style.display = 'none';
+    frame.src = '';
+  };
+
+  window.onclick = e => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      frame.src = '';
+    }
+  };
+</script>
+
+</body>
+</html>

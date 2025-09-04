@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - Mohd Amjad Ali</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+  body {
+    display: flex;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+    color: #fff;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100vh;
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-right: 2px solid #222;
+  }
+  
+  .sidebar .nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .sidebar .nav-links li {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .sidebar .nav-links li a {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  .sidebar .nav-links li a:hover {
+    color: #00ffff;
+  }
+  
+  .sidebar .nav-links li a i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .sidebar .nav-links li a span {
+    font-size: 12px;
+    display: block;
+  }
+  
+  /* Shift main content to the right */
+  .main-content {
+    margin-left: 100px;
+    padding: 20px;
+    flex: 1;
+  }  
+/* 🚀 Main Content */
+.main-content {
+    margin-left: 270px;
+    padding: 40px;
+    width: calc(100% - 270px);
+    transition: 0.3s ease-in-out;
+}
+
+/* 🚀 About Section */
+.about-section {
+    text-align: center;
+}
+
+.neon-text {
+    font-size: 36px;
+    color: #00ffcc;
+    text-shadow: 0 0 10px #00ffcc;
+}
+
+/* 🚀 Profile Image (Square Box) */
+.profile-box {
+    width: 200px;
+    height: 200px;
+    background: #222;
+    border: 3px solid #00ffcc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px #00ffcc;
+    border-radius: 10px;
+    margin: 20px auto;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+.profile-box:hover {
+    transform: scale(1.05);
+}
+
+.profile-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 🚀 About Me Text */
+.about-text {
+    width: 80%;
+    margin: auto;
+    background: #111;
+    padding: 20px;
+    border-left: 4px solid #00ffcc;
+    box-shadow: 0 0 10px #00ffcc;
+    transition: 0.3s ease-in-out;
+}
+
+.about-text:hover {
+    transform: scale(1.02);
+}
+
+/* 🚀 Education & Interests */
+.education {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.education-card {
+    background: #222;
+    padding: 15px;
+    border-left: 4px solid #00ffcc;
+    width: 400px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px #00ffcc;
+    transition: 0.3s ease-in-out;
+}
+
+.education-card:hover {
+    transform: scale(1.03);
+}
+
+/* 🚀 Interests */
+.interest-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.interest-item {
+    background: #111;
+    padding: 12px 20px;
+    border: 2px solid #00ffcc;
+    text-align: center;
+    box-shadow: 0 0 10px #00ffcc;
+    border-radius: 8px;
+    transition: 0.3s ease-in-out;
+}
+
+.interest-item:hover {
+    transform: scale(1.05);
+    background: #00ffcc;
+    color: #111;
+}
+
+</style>
+<body>
+
+  <!-- Sidebar Navigation -->
+  <div class="sidebar">
+    <ul class="nav-links">
+      <li><a href="/pages/index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="/pages/about.html" class="active"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="/pages/skills.html"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+      <li><a href="/pages/projects.html"><i class="fas fa-laptop-code"></i><span>Projects</span></a></li>
+      <li><a href="/pages/events.html"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+      <li><a href="/pages/achievements.html"><i class="fas fa-trophy"></i><span>Achievements</span></a></li>
+      <li><a href="/pages/certifications.html"><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+      <li><a href="/pages/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+       <li><a href="/pages/blog.html" ><i class="fas fa-blog"></i><span>Blog</span></a></li>
+    </ul>
+  </div>
+
+  <!-- 🚀 Main Content -->
+  <div class="main-content">
+    
+    <!-- 🚀 About Me Section -->
+    <section class="about-section">
+      <h1 class="neon-text">⚡ About Me</h1>
+      <div class="about-content">
+        <div class="profile-box">
+          <img src="/images/amjad modal.jpg" alt="Mohd Amjad Ali">
+        </div>
+        <div class="about-text">
+          <h2 class="tech-glow">📖 My Journey</h2>
+          <p>
+            I am a <strong>tech-driven innovator</strong> passionate about <strong>Artificial Intelligence, Web Development, and Game Design.</strong> 
+            My journey began with a curiosity for coding, which soon turned into a full-fledged 
+            <strong>obsession for solving real-world problems through technology.</strong>
+          </p>
+
+          <p>
+            From building <strong>AI-powered applications</strong> to crafting <strong>immersive gaming experiences</strong>, 
+            I thrive on innovation and creating futuristic digital solutions.
+          </p>
+
+          <p>
+            Aside from coding, I enjoy hosting college tech events, competing in gaming tournaments, and exploring new trends in AI & UI/UX design.
+          </p>
+
+          <ul class="highlights">
+            <li>🔥 Strong expertise in AI, Web Development, & Game Design</li>
+            <li>🚀 Proven experience in leading projects & event management</li>
+            <li>🏆 Passionate about innovation, problem-solving & futuristic tech</li>
+            <li>🤝 A natural leader & team player with great communication skills</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 🚀 Education & Interests Section -->
+    <section class="education">
+      <h2 class="tech-glow">🎓 Education & Academic Pursuits</h2>
+      <div class="education-card">
+        <h3>Lords Institute of Engineering & Technology</h3>
+        <p><strong>B.E in Information Technology</strong> - 4th Year</p>
+        <p>Specializing in <strong>AI, Web Development, and Game Design</strong></p>
+      </div>
+
+      <h2 class="tech-glow">🎮 My Interests</h2>
+      <div class="interest-grid">
+        <div class="interest-item">🎮 Gaming & Game Design</div>
+        <div class="interest-item">💡 AI & Deep Learning</div>
+        <div class="interest-item">🎨 UI/UX & Web Design</div>
+        <div class="interest-item">⚽ Football & Sports</div>
+        <div class="interest-item">🎵 Music & Creativity</div>
+      </div>
+    </section>
+  </div>
+<script>
+  // Highlight the active link in the sidebar
+  const links = document.querySelectorAll('.nav-links li a');
+  links.forEach(link => {
+    if (link.href === window.location.href) {
+      link.classList.add('active');
+    }
+  });
+</script>
+</body>
+</html>

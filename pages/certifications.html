@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Certificates</title>
+  <link rel="stylesheet" href="/css/certifications.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 90px;
+      height: 100vh;
+      background: #1a1a1a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 20px;
+      border-right: 2px solid #222;
+    }
+
+    .sidebar .nav-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .sidebar .nav-links li {
+      width: 100%;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .sidebar .nav-links li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    .sidebar .nav-links li a:hover,
+    .sidebar .nav-links li a.active {
+      color: #00ffff;
+    }
+
+    .sidebar .nav-links li a i {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+
+    .sidebar .nav-links li a span {
+      font-size: 12px;
+      display: block;
+    }
+
+    .main-content {
+      margin-left: 100px;
+      padding: 40px;
+      flex: 1;
+    }
+
+    .main-content h1 {
+      font-size: 40px;
+      text-align: center;
+      text-shadow: 0 0 15px #00fff2;
+    }
+
+    .certificates-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .cert-card {
+      background: rgba(0, 0, 0, 0.6);
+      border: 2px solid #00fff2;
+      border-radius: 20px;
+      width: 220px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 0 20px #00fff2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .cert-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #00fff2, 0 0 60px #00fff2;
+    }
+
+    .cert-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 0 8px #00fff2);
+    }
+
+    .cert-card .pdf-icon {
+      font-size: 80px;
+      color: #00fff2;
+      margin-bottom: 10px;
+    }
+
+    .cert-card h3 {
+      font-size: 16px;
+      margin: 5px 0;
+      color: #00fff2;
+    }
+
+    .cert-card p {
+      font-size: 14px;
+      color: #aaa;
+    }
+
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(15, 15, 15, 0.95);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      border: 4px solid #00fff2;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #00fff2;
+    }
+
+    .close {
+      position: absolute;
+      top: 60px;
+      right: 100px;
+      color: #00fff2;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        margin-left: 0;
+        padding: 20px;
+      }
+
+      .sidebar {
+        display: none;
+      }
+
+      .cert-card {
+        width: 100%;
+      }
+
+      .close {
+        right: 20px;
+      }
+    }
+  </style>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <ul class="nav-links">
+      <li><a href="/pages/index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="/pages/about.html"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="/pages/skills.html"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+      <li><a href="/pages/projects.html"><i class="fas fa-laptop-code"></i><span>Projects</span></a></li>
+      <li><a href="/pages/events.html"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+      <li><a href="/pages/achievements.html"><i class="fas fa-trophy"></i><span>Achievements</span></a></li>
+      <li><a href="/pages/certifications.html" class="active"><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+      <li><a href="/pages/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+       <li><a href="/pages/blog.html" ><i class="fas fa-blog"></i><span>Blog</span></a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <h1>Certificates</h1>
+    <p style="text-align:center; font-size: 18px;">Explore my certifications that showcase my dedication to learning, skill development, and achievements in various fields.</p>
+
+    <div class="certificates-section">
+      <div class="cert-card">
+        <img src="/images/cor.jpg" alt="Certificate 1">
+        <h3>DSA-thon Recognition</h3>
+        <p>CSI Students Branch<br><small>18th Nov 2023</small></p>
+      </div>
+      <div class="cert-card">
+        <img src="/images/cop.jpg" alt="Certificate 2">
+        <h3>Football - MEGSO</h3>
+        <p>MEGSO<br><small>8 & 9 Dec 2022</small></p>
+      </div>
+      <div class="cert-card">
+        <img src="/images/com.jpg" alt="Certificate 3">
+        <h3>Football Runner-Up</h3>
+        <p>LIET<br><small>2022</small></p>
+      </div>
+      <div class="cert-card">
+        <img src="/images/udemy.jpg" alt="Certificate 4">
+        <h3>Python Course</h3>
+        <p>Udemy<br><small>2022</small></p>
+      </div>
+      <div class="cert-card">
+        <img src="/images/fullstack.jpg" alt="Certificate 5">
+        <h3>Full Stack Developer</h3>
+        <p>Sonata Software<br><small>17th Mar 2025</small></p>
+      </div>
+      <div class="cert-card">
+        <img src="/images/aicerti.jpg" alt="Certificate 6">
+        <h3>Completion Certificate on Artificial Intelligence</h3>
+        <p>Infosys Foundation<br><small>5th Dec 2024</small></p>
+      </div>  
+      <div class="cert-card">
+        <img src="/images/intern.jpg" alt="Certificate 7">
+        <h3>Internship Completion</h3>
+        <p>Datapoint IT Pvt Ltd<br><small>2022</small></p>
+      </div>
+      <div class="cert-card">
+        <img src="/images/mongodb.jpg" alt="Certificate 8">
+        <h3>MongoDB</h3>
+        <p>ICT Academy<br><small>2024</small></p>
+      </div>
+      <div class="cert-card">
+        <a href="/Certificate.pdf" target="_blank">
+          <i class="fas fa-file-pdf pdf-icon"></i>
+          <h3>PowerBI Workshop</h3>
+          <p>OfficeMaster<br><small>10th Aug 2025</small></p>
+        </a>
+      </div>
+
+      <!-- New MathWorks Certificates -->
+      <div class="cert-card">
+        <img src="/images/machinelearning.jpg" alt="Machine Learning Certificate">
+        <h3>Machine Learning Onramp</h3>
+        <p>MathWorks<br><small>16th Sep 2024</small></p>
+      </div>
+      <div class="cert-card">
+        <img src="/images/deeplearning.jpg" alt="Deep Learning Certificate">
+        <h3>Deep Learning Onramp</h3>
+        <p>MathWorks<br><small>16th Sep 2024</small></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Image Preview -->
+  <div class="modal" id="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img">
+  </div>
+
+  <script>
+    document.querySelectorAll(".cert-card img").forEach(img => {
+      img.addEventListener("click", () => {
+        document.getElementById("modal").style.display = "block";
+        document.getElementById("modal-img").src = img.src;
+      });
+    });
+
+    document.querySelector(".modal .close").addEventListener("click", () => {
+      document.getElementById("modal").style.display = "none";
+    });
+  </script>
+</body>
+</html>

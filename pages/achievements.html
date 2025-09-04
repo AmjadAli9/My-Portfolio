@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Achievements | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@400&display=swap" rel="stylesheet" />
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+</head>
+<body>
+    <style>
+          body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: #0e0e0e;
+      color: #fff;
+      display: flex;
+    }   
+
+.sidebar {
+position: fixed;
+top: 0;
+left: 0;
+width: 90px;
+height: 100vh;
+background: #1a1a1a;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 20px;
+border-right: 2px solid #222;
+}
+
+.sidebar .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sidebar .nav-links li {
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sidebar .nav-links li a {
+  color: #bbb;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.sidebar .nav-links li a:hover {
+  color: #00ffff;
+}
+
+.sidebar .nav-links li a i {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.sidebar .nav-links li a span {
+  font-size: 12px;
+  display: block;
+}
+
+
+    .nav-links {
+      list-style: none;
+      padding: 0;
+    }
+
+    .nav-links li {
+      margin: 20px 0;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      background: #333;
+      border-left: 4px solid #0ff;
+    }
+
+    .nav-links i {
+      margin-right: 10px;
+    }
+
+    .main-content {
+      margin-left: 220px;
+      padding: 20px 40px;
+      flex: 1;
+    }
+
+    .glow {
+      font-family: 'Orbitron', sans-serif;
+      color: #0ff;
+      text-shadow: 0 0 10px #0ff;
+    }
+
+    .section-title {
+      font-size: 24px;
+      margin-top: 40px;
+      border-bottom: 2px solid #0ff;
+      padding-bottom: 5px;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .achievement-card {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    }
+
+    .achievement-icon {
+      font-size: 30px;
+      color: #0ff;
+      margin-bottom: 10px;
+    }
+
+    .divider {
+      border: none;
+      height: 1px;
+      background: #333;
+      margin: 40px 0;
+    }
+
+    .achievement-details .achievement {
+      background: #181818;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 255, 255, 0.05);
+    }
+
+    .gallery-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      backdrop-filter: blur(5px);
+    }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .achievement-card,
+  .gallery-item {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .gallery-item img {
+    height: 110px;
+  }
+
+  .achievements-grid {
+    gap: 20px;
+  }
+}
+    </style>
+  <div class="sidebar">
+    <ul class="nav-links">
+      <li><a href="/pages/index.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+      <li><a href="/pages/about.html"><i class="fas fa-user"></i><span>About</span></a></li>
+      <li><a href="/pages/skills.html"><i class="fas fa-tools"></i><span>Skills</span></a></li>
+      <li><a href="/pages/projects.html"><i class="fas fa-laptop-code"></i><span>Projects</span></a></li>
+      <li><a href="/pages/events.html"><i class="fas fa-calendar-alt"></i><span>Events</span></a></li>
+      <li><a href="/pages/achievements.html"><i class="fas fa-trophy"></i><span>Achievements</span></a></li>
+      <li><a href="/pages/certifications.html" "><i class="fas fa-certificate"></i><span>Certificates</span></a></li>
+      <li><a href="/pages/contact.html"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+       <li><a href="/pages/blog.html" ><i class="fas fa-blog"></i><span>Blog</span></a></li>
+    </ul>
+  </div>
+
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section class="intro">
+      <h1 class="glow">Achievements</h1>
+      <p>These are some of my proudest accomplishments that have shaped my journey.</p>
+    </section>
+
+    <!-- Academic & Technical Achievements -->
+    <section aria-label="Academic and Technical Achievements">
+      <h2 class="section-title">Academic & Technical Achievements</h2>
+      <div class="achievements-grid">
+        <article class="achievement-card">
+          <i class="fas fa-medal achievement-icon"></i>
+          <h3>97.88% Accuracy</h3>
+          <p>Achieved high accuracy in Wheat Disease Detection & Classification using Deep Learning.</p>
+        </article>
+        <article class="achievement-card">
+          <i class="fas fa-robot achievement-icon"></i>
+          <h3>AI All-in-One App</h3>
+          <p>Developed an AI app combining chatbot, text-to-speech, quizzes, and code generation.</p>
+        </article>
+        <article class="achievement-card">
+          <i class="fas fa-gamepad achievement-icon"></i>
+          <h3>Zeroclass Gaming Website</h3>
+          <p>Created a free gaming platform featuring Sudoku, Tic Tac Toe, Wordsearch, and Chess.</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Organizational & Leadership -->
+    <section aria-label="Organizational and Leadership Achievements">
+      <h2 class="section-title">Organizational & Leadership</h2>
+      <div class="achievements-grid">
+        <article class="achievement-card">
+          <i class="fas fa-users achievement-icon"></i>
+          <h3>Event Organizer</h3>
+          <p>Led college events like DSA-thon & Techfiesta, enhancing leadership and management skills.</p>
+        </article>
+        <article class="achievement-card">
+          <i class="fas fa-award achievement-icon"></i>
+          <h3>Event Management Team</h3>
+          <p>Managed technical and non-technical events for the entire college campus.</p>
+        </article>
+        <article class="achievement-card">
+          <i class="fas fa-handshake achievement-icon"></i>
+          <h3>Batch Representative</h3>
+          <p>Represented my batch and liaised with faculty and event organizers effectively.</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Personal & Creative Achievements -->
+    <section aria-label="Personal and Creative Achievements">
+      <h2 class="section-title">Personal & Creative Achievements</h2>
+      <div class="achievements-grid">
+        <article class="achievement-card">
+          <i class="fas fa-paint-brush achievement-icon"></i>
+          <h3>Game Design Enthusiast</h3>
+          <p>Passionate about game design and animations using Unreal Engine & Blender.</p>
+        </article>
+        <article class="achievement-card">
+          <i class="fas fa-music achievement-icon"></i>
+          <h3>Music & Sports</h3>
+          <p>Enjoy playing football, music, and gaming which have brought me personal growth.</p>
+        </article>
+        <article class="achievement-card">
+          <i class="fas fa-code achievement-icon"></i>
+          <h3>Technical Skills Growth</h3>
+          <p>Continually improving programming and web development skills for professional growth.</p>
+        </article>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Other Achievement Details -->
+    <section class="achievement-details" aria-label="Additional Achievement Details">
+      <article class="achievement">
+        <h2>🌟 Successful Organization of Events</h2>
+        <p>Played a key role in organizing major events like DSA-thon and Techfiesta, enhancing my leadership skills.</p>
+      </article>
+      <article class="achievement">
+        <h2>🚀 Co-Founding a Startup</h2>
+        <p>Co-founded a startup with Thakur Sanjana and Sadia Habeeb Unnisa, showcasing entrepreneurial spirit and teamwork.</p>
+      </article>
+      <article class="achievement">
+        <h2>⚽ Winning the Reliance Football Tournament</h2>
+        <p>Led my college team to victory in the Reliance Football Tournament, demonstrating teamwork and perseverance.</p>
+      </article>
+      <article class="achievement">
+        <h2>🏆 Runners-up in Inter-College Football Tournament</h2>
+        <p>Strong performance led us to the finals, securing the runners-up position among multiple colleges.</p>
+      </article>
+      <article class="achievement">
+        <h2>🎤 Active Member of the Speakers Club</h2>
+        <p>Joined the Speakers Club and ranked up as an active member through dedication and participation.</p>
+      </article>
+      <article class="achievement">
+        <h2>📣 Class Ambassador for Lords Entrepreneurship Cell</h2>
+        <p>Represented my class as an ambassador, contributing to various initiatives and driving entrepreneurship activities.</p>
+      </article>
+    </section>
+
+    <!-- Gallery -->
+    <h2 class="section-title">Gallery</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="/images/event.jpg" alt="Event" />
+        <div class="caption">DSA-thon Event</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/event1.jpg" alt="Event1" />
+        <div class="caption">Techfiesta Workshop</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/eventmanage.jpg" alt="Event Management" />
+        <div class="caption">Managing Events</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/football.jpg" alt="Football" />
+        <div class="caption">Winning Football Team</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/football 3.jpg" alt="Football Tournament" />
+        <div class="caption">Inter-College Match</div>
+      </div>
+      <div class="gallery-item">
+        <img src="/images/speakers club.jpg" alt="Speakers Club" />
+        <div class="caption">Speakers Club Session</div>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+  </body>
+</html>
